@@ -6,17 +6,17 @@ const port = process.env.PORT || 5000;
 const categories = require("./data/categories.json");
 const news = require("./data/news.json");
 
-//app.use(cors());
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "OPTIONS, GET, POST, PUT, PATCH, DELETE"
-  );
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+app.use(cors());
+// app.use((req, res, next) => {
+//   res.setHeader("Access-Control-Allow-Origin", "*");
+//   res.setHeader(
+//     "Access-Control-Allow-Methods",
+//     "OPTIONS, GET, POST, PUT, PATCH, DELETE"
+//   );
+//   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-  next();
-});
+//   next();
+// });
 
 app.get("/", (req, res) => {
   res.send("News Server API is Running");
